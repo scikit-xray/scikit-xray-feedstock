@@ -18,11 +18,11 @@ requirements:
   run:
     - python
     - numpy
-    - scipy ==0.15.1
+    - scipy
     - six
     - xraylib
     - scikit-image
-    - lmfit ==0.8.3
+    - lmfit >=0.8.3
     - netcdf4  # optional, required for skxray.io
 
 test:

@@ -13,7 +13,7 @@ docker info
 config=$(cat <<CONDARC
 
 channels:
-
+ - scikit-xray
  - defaults # As we need conda-build
 
 conda-build:
