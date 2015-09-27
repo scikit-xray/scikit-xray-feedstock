@@ -14,6 +14,6 @@ dependencies:
 test:
   override:
     # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
-    - export CONDA_PY=2.7; export CONDA_NPY=1.9; ./ci_support/run_docker_build.sh
-    - export CONDA_PY=3.4; export CONDA_NPY=1.9; ./ci_support/run_docker_build.sh
+    - export CONDA_PY=27; export CONDA_NPY=19; ./ci_support/run_docker_build.sh
+    - export CONDA_PY=34; export CONDA_NPY=19; ./ci_support/run_docker_build.sh
 
