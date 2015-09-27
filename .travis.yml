@@ -1,25 +1,22 @@
-# This file was generated automatically by conda-forge (vn 0.1.0).
 language: objective-c
-
 env:
-  -CONDA_NPY=1.9 CONDA_PY=2.7
-  -CONDA_NPY=1.9 CONDA_PY=3.4
-
+  matrix:
+  - "CONDA_NPY=1.9 CONDA_PY=2.7"
+  - "CONDA_NPY=1.9 CONDA_PY=3.4"
+  - secure: rl/8J7S6g0r+x2YifnZRoEnEIh8MsfPGHycCMD8YK90EbQa6TyAaxCZEpQquSyNwb644diV1CSHD2qTfD/mwqU3cHfSckwwPaGErJH7mFf2iaRPpVvn/MfEnlh25Uh/YHXENKlWoRSHSbRQRpdNd16mI9yL5tvsAbmkGng7qosDx9hYUllnYJpxYXzisORBDFTwStQabjOMWIpYw5DPRHYCnDHEjSL+RMKyW8zRLu1jAl4eJta7Ih6xZ6X/1Wn47X1XTf6SLVRElZlQUEvq5AkgkCZlktNrcZ86j/PhGapvSHXruFQamEe5wgxwE2dQbpmL7PLH1NaYAnhpz2KxbDIRCS/ULwE0VU9ab/QCrJ5LFvsBb3SmRRteQbmgYjrFHr/ZYY6cSl1hmTb2TsnY3zd8Z+IAwDm5/W3DMR0/L5prJRSpMMiIrqy4vbYEA5DP4960/guL7Loswh/sc/Xb4iYc7gjfjeBT0N8QQmk1OfcOH3ZMO35Q4kyQhR48xos4ihK7jY2fpEWJ97cvQttSfODQurFa1MVqx/IRLUzeDMtihe9vu1JOQzuHAjv2Vz3RpBBdy1gV7AvPk140YsXApN888lDLhvSpBVP82XPL8ekyPAHLfObT0+KwlBmluPmcapBhG49n+nDQdRrTFlwJvVewxBjlRGH4MEyoFpvAtxv8=
 install:
-    - |
-      MINICONDA_URL="http://repo.continuum.io/miniconda"
-      MINICONDA_FILE="Miniconda3-3.7.3-MacOSX-x86_64.sh"
-      wget "${MINICONDA_URL}/${MINICONDA_FILE}"
-      bash $MINICONDA_FILE -b
+- |
+  MINICONDA_URL="http://repo.continuum.io/miniconda"
+  MINICONDA_FILE="Miniconda3-3.7.3-MacOSX-x86_64.sh"
+  wget "${MINICONDA_URL}/${MINICONDA_FILE}"
+  bash $MINICONDA_FILE -b
 
-      export PATH=/Users/travis/miniconda3/bin:$PATH
+  export PATH=/Users/travis/miniconda3/bin:$PATH
 
-      conda update --yes conda
-      conda install --yes conda-build jinja2 anaconda-client
-      conda config --add channels scikit-xray
-
+  conda update --yes conda
+  conda install --yes conda-build jinja2 anaconda-client
+  conda config --add channels scikit-xray
 script:
-  - conda build ./recipe
-
+- conda build ./recipe
 after_success:
-  - ./ci_support/upload_or_check_non_existence.py ./recipe scikit-xray --channel=main
+- "./ci_support/upload_or_check_non_existence.py ./recipe scikit-xray --channel=main"
