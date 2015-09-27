@@ -1,30 +1,10 @@
 # This file was generated automatically by conda-forge (vn 0.1.0).
-
-
-
-
 language: objective-c
 
-
-
 env:
-
-
   matrix:
-
-    -CONDA_NPY=1.8  CONDA_PY=2.7
-
-    -CONDA_NPY=1.8  CONDA_PY=3.4
-
-    -CONDA_NPY=1.9  CONDA_PY=2.7
-
-    -CONDA_NPY=1.9  CONDA_PY=3.4
-
-
-
-
-
-
+    -CONDA_NPY=1.9; CONDA_PY=2.7
+    -CONDA_NPY=1.9; CONDA_PY=3.4
 
 install:
     - |
