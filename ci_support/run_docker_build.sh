@@ -34,6 +34,8 @@ show_channel_urls: True
 CONDARC
 )
 
+echo "pyver=${pyver}"
+echo "npyver=${npyver}"
 cat << EOF | docker run -i \
                         -v ${RECIPE_ROOT}:/recipe_root \
                         -v ${FEEDSTOCK_ROOT}:/feedstock_root \
