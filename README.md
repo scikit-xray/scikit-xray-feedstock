@@ -34,5 +34,5 @@ Add binstar token to travis.yml
 
 ```
 gem install travis
-travis encrypt BINSTAR_TOKEN={{ token }} -r github-organization/github-repo --add env.matrix
+travis encrypt BINSTAR_TOKEN={{ token }} -r github-organization/github-repo --add env.global
 ```
