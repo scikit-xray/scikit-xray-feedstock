@@ -2,7 +2,7 @@ machine:
   services:
     - docker
   environment:
-    DOCKERIMAGE: ericdill/obvious-ci
+    DOCKERIMAGE: pelson/obvious-ci:latest_x64
 
 dependencies:
   # Note, we used to use the naive caching of docker images, but found that it was quicker
