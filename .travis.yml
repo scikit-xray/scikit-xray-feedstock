@@ -11,15 +11,15 @@ env:
 
 
   matrix:
-    
-    -CONDA_NPY=1.8  CONDA_PY=2.7  
-    
-    -CONDA_NPY=1.8  CONDA_PY=3.4  
-    
-    -CONDA_NPY=1.9  CONDA_PY=2.7  
-    
-    -CONDA_NPY=1.9  CONDA_PY=3.4  
-    
+
+    -CONDA_NPY=1.8  CONDA_PY=2.7
+
+    -CONDA_NPY=1.8  CONDA_PY=3.4
+
+    -CONDA_NPY=1.9  CONDA_PY=2.7
+
+    -CONDA_NPY=1.9  CONDA_PY=3.4
+
 
 
 
@@ -37,9 +37,10 @@ install:
 
       conda update --yes conda
       conda install --yes conda-build jinja2 binstar
+      conda config --add channels scikit-xray
 
 script:
   - conda build ./recipe
 
 after_success:
-  - ./ci_support/upload_or_check_non_existence.py ./recipe conda-forge --channel=main
+  - ./ci_support/upload_or_check_non_existence.py ./recipe scikit-xray --channel=main
