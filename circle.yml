@@ -1,8 +1,10 @@
 env:
-  - DOCKERIMAGE=ericdill/obvious-ci
+
 machine:
   services:
     - docker
+  environment:
+    DOCKERIMAGE: ericdill/obvious-ci
 
 dependencies:
   # Note, we used to use the naive caching of docker images, but found that it was quicker
