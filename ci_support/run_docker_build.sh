@@ -28,6 +28,7 @@ cat << EOF | docker run -i \
                         -v ${RECIPE_ROOT}:/recipe_root \
                         -v ${FEEDSTOCK_ROOT}:/feedstock_root \
                         -a stdin -a stdout -a stderr \
+                        -e ${CONDA_PY} -e {$CONDA_NPY}
                         ${DOCKERIMAGE} \
                         bash || exit $?
 
@@ -49,6 +50,7 @@ cat << EOF | docker run -i \
                         -v ${RECIPE_ROOT}:/recipe_root \
                         -v ${FEEDSTOCK_ROOT}:/feedstock_root \
                         -a stdin -a stdout -a stderr \
+                        -e ${CONDA_PY} -e {$CONDA_NPY}
                         ${DOCKERIMAGE} \
                         bash || exit $?
 
