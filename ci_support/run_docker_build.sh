@@ -49,8 +49,8 @@ echo "$config" > ~/.condarc
 # A lock sometimes occurs with incomplete builds. The lock file is stored in build_artefacts.
 conda clean --lock
 
-echo "CONDA_PY=${CONDA_PY}"
-echo "CONDA_NPY=${CONDA_NPY}"
+echo "CONDA_PY=$CONDA_PY"
+echo "CONDA_NPY=$CONDA_NPY"
 conda info
 
 
