@@ -14,6 +14,6 @@ dependencies:
 test:
   override:
     # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
-    - export pyver=27; export npyver=19; ./ci_support/run_docker_build.sh
-    - export pyver=34; export npyver=19; ./ci_support/run_docker_build.sh
+    - export pyver=2.7; export npyver=1.9; ./ci_support/run_docker_build.sh
+    - export pyver=3.4; export npyver=1.9; ./ci_support/run_docker_build.sh
 
