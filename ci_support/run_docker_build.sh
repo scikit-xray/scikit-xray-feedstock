@@ -40,7 +40,7 @@ cat << EOF | docker run -i \
                         -v ${RECIPE_ROOT}:/recipe_root \
                         -v ${FEEDSTOCK_ROOT}:/feedstock_root \
                         -a stdin -a stdout -a stderr \
-                        --env CONDA_PY=${pyver} --env CONDA_NPY={$npyver} \
+                        --env CONDA_PY="${pyver}" --env CONDA_NPY="{$npyver}" \
                         ${DOCKERIMAGE} \
                         bash || exit $?
 
@@ -49,9 +49,9 @@ echo "$config" > ~/.condarc
 # A lock sometimes occurs with incomplete builds. The lock file is stored in build_artefacts.
 conda clean --lock
 
-conda info
 echo "CONDA_PY=${CONDA_PY}"
 echo "CONDA_NPY=${CONDA_NPY}"
+conda info
 
 
 conda build --no-test /recipe_root || exit 1
@@ -64,7 +64,7 @@ cat << EOF | docker run -i \
                         -v ${RECIPE_ROOT}:/recipe_root \
                         -v ${FEEDSTOCK_ROOT}:/feedstock_root \
                         -a stdin -a stdout -a stderr \
-                        --env CONDA_PY=${pyver} --env CONDA_NPY={$npyver} \
+                        --env CONDA_PY="${pyver}" --env CONDA_NPY="{$npyver}" \
                         ${DOCKERIMAGE} \
                         bash || exit $?
 
@@ -72,9 +72,9 @@ export BINSTAR_TOKEN=${BINSTAR_TOKEN}
 export PYTHONUNBUFFERED=1
 echo "$config" > ~/.condarc
 
-conda info
 echo "CONDA_PY=${CONDA_PY}"
 echo "CONDA_NPY=${CONDA_NPY}"
+conda info
 
 
 conda build --test /recipe_root || exit 1
